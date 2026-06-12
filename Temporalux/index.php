@@ -25,7 +25,6 @@ $result = $conn->query("
   <title>Tempora Lux — Exklusive Schweizer Luxusuhren kaufen &amp; mieten</title>
   <meta name="description" content="Tempora Lux — kuratierte Schweizer Luxusuhren zum Kaufen oder Mieten. Zeitlose Meisterwerke für Kenner." />
 
-  <!-- Webfonts: refined serif + geometric sans (Schulprojekt) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -36,7 +35,7 @@ $result = $conn->query("
 </head>
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.php" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
@@ -54,7 +53,7 @@ $result = $conn->query("
     </div>
   </header>
 
-  <!-- Mobile overlay -->
+  <!-- Mobile -->
   <div class="mobile-menu" id="mobile-menu">
     <nav class="mobile-menu__links" aria-label="Mobile Navigation">
       <a href="index.php" class="mobile-menu__link is-active">Entdecken</a>
@@ -65,7 +64,7 @@ $result = $conn->query("
   </div>
 
   <main>
-    <!-- ================= HERO ================= -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
@@ -98,7 +97,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= VALUE PROPS ================= -->
+    <!-- Value -->
     <section class="section">
       <div class="container">
         <div class="section-head reveal">
@@ -131,7 +130,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= STATS ================= -->
+    <!-- Stats -->
     <section class="section stats">
       <div class="container">
         <div class="stats__grid">
@@ -144,7 +143,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= BUY VS RENT ================= -->
+    <!-- Kaufen & Mieten -->
     <section class="section">
       <div class="container">
         <div class="split">
@@ -241,7 +240,7 @@ $result = $conn->query("
 
   </div>
 </section>
-    <!-- ================= CLOSING CTA ================= -->
+    <!-- CTA -->
     <section class="section newsletter">
       <div class="container newsletter__inner reveal">
         <span class="eyebrow eyebrow--light eyebrow--center">Beginnen Sie Ihre Reise</span>
@@ -286,7 +285,7 @@ $result = $conn->query("
 </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
