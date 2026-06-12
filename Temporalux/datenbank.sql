@@ -25,7 +25,7 @@ USE temporalux;
 
 -- -------------------------------------------------------------------------
 -- 1. Tabelle: uhren
---    Versorgt BEIDE Listen — die Kauf-Karten (kaufen.html) und die
+--    Versorgt BEIDE Listen — die Kauf-Karten (kaufen.php) und die
 --    Miet-Karten (mieten.html). Eine Uhr kann kaufbar UND/ODER mietbar sein.
 --    * kaufpreis        = NULL  -> nicht zum Kauf gelistet
 --    * mietpreis_monat  = NULL  -> nicht zur Miete gelistet
@@ -44,7 +44,7 @@ CREATE TABLE uhren (
 ) ENGINE=InnoDB;
 
 -- Seed-Daten: exakt die 6 Uhren aus dem aktuellen HTML.
--- (Kaufpreise aus kaufen.html, Miettarif + Monatspreis aus mieten.html.)
+-- (Kaufpreise aus kaufen.php, Miettarif + Monatspreis aus mieten.html.)
 -- Hinweis: Auf der Kauf-Seite heisst das JLC-Modell "Reverso Sublime",
 --          auf der Miet-Seite verkürzt "Reverso" — hier kanonisch "Reverso".
 INSERT INTO uhren (marke, modell, kaufpreis, mietpreis_monat, miet_tarif) VALUES
@@ -99,7 +99,7 @@ CREATE TABLE anfragen (
 
 -- -------------------------------------------------------------------------
 -- 4. Tabelle: newsletter_abonnenten
---    Anmeldungen des Newsletter-Formulars (kaufen.html / mieten.html).
+--    Anmeldungen des Newsletter-Formulars (kaufen.php / mieten.html).
 -- -------------------------------------------------------------------------
 DROP TABLE IF EXISTS newsletter_abonnenten;
 CREATE TABLE newsletter_abonnenten (
@@ -112,7 +112,7 @@ CREATE TABLE newsletter_abonnenten (
 -- =========================================================================
 -- Beispiel-Abfragen (so würden später die Karten gefüllt) — nur Referenz:
 --
---   -- Kauf-Karten (kaufen.html):
+--   -- Kauf-Karten (kaufen.php):
 --   SELECT marke, modell, kaufpreis
 --   FROM uhren
 --   WHERE kaufpreis IS NOT NULL AND verfuegbar = 1
