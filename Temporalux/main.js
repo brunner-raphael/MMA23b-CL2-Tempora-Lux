@@ -174,7 +174,7 @@
       var telefon = form.elements["telefon"];
       
       if (telefon.value.trim()) {
-      var validTelefon = /^+41\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/;
+      var validTelefon = /^\+41\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/;
       
       if (!validTelefon.test(telefon.value.trim())) {
       setError(
