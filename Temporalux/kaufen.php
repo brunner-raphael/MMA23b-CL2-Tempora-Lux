@@ -36,7 +36,7 @@ $result = $conn->query("SELECT * FROM uhren");
         <a href="index.php" class="nav__link">Entdecken</a>
         <a href="kaufen.php" class="nav__link is-active">Kaufen</a>
         <a href="mieten.php" class="nav__link">Mieten</a>
-        <a href="kontakt.html" class="nav__link">Kontakt</a>
+        <a href="kontakt.php" class="nav__link">Kontakt</a>
       </nav>
       <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -49,7 +49,7 @@ $result = $conn->query("SELECT * FROM uhren");
       <a href="index.php" class="mobile-menu__link">Entdecken</a>
       <a href="kaufen.php" class="mobile-menu__link is-active">Kaufen</a>
       <a href="mieten.php" class="mobile-menu__link">Mieten</a>
-      <a href="kontakt.html" class="mobile-menu__link">Kontakt</a>
+      <a href="kontakt.php" class="mobile-menu__link">Kontakt</a>
     </nav>
   </div>
 
@@ -168,7 +168,7 @@ $result = $conn->query("SELECT * FROM uhren");
             </span>
 
             <a class="card__cta"
-               href="kontakt.html?betreff=<?= urlencode($row['Uhren_Name']); ?>&typ=kaufen">
+               href="kontakt.php?betreff=<?= urlencode($row['Uhren_Name']); ?>&typ=kaufen">
                Bestellen <span class="arrow">→</span>
             </a>
 
@@ -191,7 +191,7 @@ $result = $conn->query("SELECT * FROM uhren");
 </div>
 
         <div class="center reveal" style="margin-top:3.5rem">
-          <a href="kontakt.html?typ=kaufen" class="btn btn--outline">Beratung anfragen <span class="arrow">→</span></a>
+          <a href="kontakt.php?typ=kaufen" class="btn btn--outline">Beratung anfragen <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -237,7 +237,7 @@ $result = $conn->query("SELECT * FROM uhren");
           <h4>Unternehmen</h4>
           <ul>
             <li><a href="index.php">Über uns</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
         <div class="footer__col">
