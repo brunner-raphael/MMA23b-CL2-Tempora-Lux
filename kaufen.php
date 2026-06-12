@@ -28,7 +28,7 @@ $result = $conn->query("SELECT * FROM uhren");
 </head>
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
+  <!-- Nav -->
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.php" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
@@ -54,7 +54,7 @@ $result = $conn->query("SELECT * FROM uhren");
   </div>
 
   <main>
-    <!-- ================= HERO ================= -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
@@ -82,7 +82,7 @@ $result = $conn->query("SELECT * FROM uhren");
       </div>
     </section>
 
-    <!-- ================= TRUST ================= -->
+    <!-- Vertrauen -->
     <section class="section">
       <div class="container">
         <div class="section-head section-head--center reveal">
@@ -116,7 +116,7 @@ $result = $conn->query("SELECT * FROM uhren");
       </div>
     </section>
 
-    <!-- ================= STATS ================= -->
+    <!-- Stats -->
     <section class="section stats">
       <div class="container">
         <div class="stats__grid" style="grid-template-columns:repeat(3,1fr)">
@@ -128,7 +128,7 @@ $result = $conn->query("SELECT * FROM uhren");
       </div>
     </section>
 
-    <!-- ================= CATALOGUE ================= -->
+    <!-- Katalog -->
     <section class="section" id="kollektion">
       <div class="container">
         <div class="section-head reveal">
@@ -196,7 +196,7 @@ $result = $conn->query("SELECT * FROM uhren");
       </div>
     </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
