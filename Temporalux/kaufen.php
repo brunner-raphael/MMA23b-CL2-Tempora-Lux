@@ -34,7 +34,7 @@ $result = $conn->query("SELECT * FROM uhren");
       <a href="index.html" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
       <nav class="nav__links" aria-label="Hauptnavigation">
         <a href="index.html" class="nav__link">Entdecken</a>
-        <a href="kaufen.html" class="nav__link is-active">Kaufen</a>
+        <a href="kaufen.php" class="nav__link is-active">Kaufen</a>
         <a href="mieten.html" class="nav__link">Mieten</a>
         <a href="kontakt.html" class="nav__link">Kontakt</a>
       </nav>
@@ -47,7 +47,7 @@ $result = $conn->query("SELECT * FROM uhren");
   <div class="mobile-menu" id="mobile-menu">
     <nav class="mobile-menu__links" aria-label="Mobile Navigation">
       <a href="index.html" class="mobile-menu__link">Entdecken</a>
-      <a href="kaufen.html" class="mobile-menu__link is-active">Kaufen</a>
+      <a href="kaufen.php" class="mobile-menu__link is-active">Kaufen</a>
       <a href="mieten.html" class="mobile-menu__link">Mieten</a>
       <a href="kontakt.html" class="mobile-menu__link">Kontakt</a>
     </nav>
@@ -229,7 +229,7 @@ $result = $conn->query("SELECT * FROM uhren");
         <div class="footer__col">
           <h4>Kollektion</h4>
           <ul>
-            <li><a href="kaufen.html">Uhren kaufen</a></li>
+            <li><a href="kaufen.php">Uhren kaufen</a></li>
             <li><a href="mieten.html">Uhren mieten</a></li>
           </ul>
         </div>
