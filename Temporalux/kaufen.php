@@ -72,11 +72,11 @@ $result = $conn->query("SELECT * FROM uhren");
         </div>
         <div class="hero__visual reveal" data-delay="2">
           <div class="ph ph--hero">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <circle cx="12" cy="13" r="7" /><path d="M12 9.5V13l2.5 1.5" stroke-linecap="round" />
-              <path d="M9 3h6M10 3l-.4 3M14 3l.4 3" stroke-linecap="round" />
-            </svg>
-            <span class="ph__tag">Zeitmesser-Abbildung</span>
+            <img
+    src="assets/hero_kaufen.png"
+    alt="Luxusuhr Tempora Lux"
+    class="hero__image"
+  >
           </div>
         </div>
       </div>
