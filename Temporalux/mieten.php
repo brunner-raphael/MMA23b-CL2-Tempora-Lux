@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 $result = $conn->query("
     SELECT *
     FROM uhren
-    ORDER BY Uhren_ID ASC
+    ORDER BY RAND()
     LIMIT 67
 ");
 ?>
