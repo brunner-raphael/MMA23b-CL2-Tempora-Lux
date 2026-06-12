@@ -97,9 +97,9 @@
   }
 
   /* ----------------------------------------------------------------- */
-  /* Contact / order form (kontakt.html)                                */
+  /* Contact / order form (kontakt.php)                                */
   /* - Pre-fills "Betreff" + "Anliegen" from the order-button URL       */
-  /*   e.g. kontakt.html?betreff=Rolex%20Submariner&typ=kaufen          */
+  /*   e.g. kontakt.php?betreff=Rolex%20Submariner&typ=kaufen          */
   /* - Client-side validation with German messages (demo, no backend)   */
   /* ----------------------------------------------------------------- */
   function initContactForm() {
