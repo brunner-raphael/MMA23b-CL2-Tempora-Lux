@@ -203,12 +203,5 @@
    alert("Formular erfolgreich validiert!");
    form.reset();
    });
-
-      form.querySelectorAll("input, textarea, select, button").forEach(function (el) {
-        if (el.type !== "submit") el.setAttribute("disabled", "disabled");
-      });
-      var submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.style.display = "none";
-      if (success) success.classList.add("is-shown");
     };
 })();
