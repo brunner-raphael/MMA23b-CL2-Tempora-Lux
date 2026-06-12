@@ -1,0 +1,430 @@
+<?php
+$conn = new mysqli(
+    "localhost",
+    "kimo_estermann",
+    "Tempora_Lux",
+    "kimo-estermann1_"
+);
+
+if ($conn->connect_error) {
+    die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+}
+
+$result = $conn->query("
+    SELECT *
+    FROM uhren
+    ORDER BY RAND()
+    LIMIT 67
+");
+?>
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uhren mieten — Tempora Lux</title>
+  <meta name="description" content="Mieten Sie Schweizer Luxusuhren bei Tempora Lux — flexible Tarife, Vollkasko-Versicherung und persönliche Beratung. Luxus auf Zeit." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.php" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <a href="index.php" class="nav__link">Entdecken</a>
+        <a href="kaufen.php" class="nav__link">Kaufen</a>
+        <a href="mieten.php" class="nav__link is-active">Mieten</a>
+        <a href="kontakt.php" class="nav__link">Kontakt</a>
+      </nav>
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-menu__links" aria-label="Mobile Navigation">
+      <a href="index.php" class="mobile-menu__link">Entdecken</a>
+      <a href="kaufen.php" class="mobile-menu__link">Kaufen</a>
+      <a href="mieten.php" class="mobile-menu__link is-active">Mieten</a>
+      <a href="kontakt.php" class="mobile-menu__link">Kontakt</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="eyebrow reveal">Miete</span>
+          <h1 class="display-1 hero__title reveal" data-delay="1">Luxus auf Zeit — ohne Kompromisse</h1>
+          <p class="lead reveal" data-delay="2">
+            Tragen Sie Ihre Traumuhr, bevor Sie sich entscheiden. Mit voller Flexibilität,
+            umfassender Versicherung und persönlicher Beratung — für eine Woche, einen Monat
+            oder so lange Sie möchten.
+          </p>
+          <div class="hero__cta reveal" data-delay="3">
+            <a href="#tarife" class="btn btn--gold">Tarife ansehen <span class="arrow">→</span></a>
+            <a href="#mietkollektion" class="btn btn--outline">Uhren entdecken <span class="arrow">→</span></a>
+          </div>
+        </div>
+        <div class="hero__visual reveal" data-delay="2">
+          <div class="ph ph--hero">
+           <div class="hero__visual reveal" data-delay="2">
+  <img
+    src="images/hero_mieten.png"
+    alt="Luxusuhr Tempora Lux"
+    class="hero__image"
+  >
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONCEPT ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="concept">
+          <div class="reveal">
+            <span class="eyebrow">So funktioniert's</span>
+            <h2 class="display-2">Die Miete neu gedacht</h2>
+            <p class="lead" style="margin-top:1.2rem">
+              Eine luxuriöse Uhr für jeden Anlass — ganz ohne den Kaufpreis. In drei einfachen
+              Schritten zu Ihrem Wunschmodell.
+            </p>
+            <div class="steps">
+              <div class="step">
+                <span class="step__n">1</span>
+                <div><h4>Tarif wählen</h4><p>Entscheiden Sie sich für das Abonnement, das zu Ihrem Lebensstil passt.</p></div>
+              </div>
+              <div class="step">
+                <span class="step__n">2</span>
+                <div><h4>Uhr auswählen</h4><p>Wählen Sie aus unserer kuratierten Kollektion Ihr Wunschmodell — versichert und geprüft.</p></div>
+              </div>
+              <div class="step">
+                <span class="step__n">3</span>
+                <div><h4>Tragen &amp; wechseln</h4><p>Genießen Sie Ihre Uhr und tauschen Sie sie, wann immer Sie möchten.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="concept__visual reveal" data-delay="2">
+            <div class="ph ph--tall">
+               <img
+    src="images/hero.png"
+    alt="Luxusuhr Tempora Lux"
+    class="hero__image"
+  >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section class="section" id="tarife">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Tarife</span>
+          <h2 class="display-2">Wählen Sie Ihr Abonnement</h2>
+          <p class="lead" style="margin:1.2rem auto 0">Drei Stufen, monatlich kündbar. Wechseln Sie jederzeit.</p>
+        </div>
+
+        <div class="pricing">
+          <!-- Basic -->
+          <div class="plan reveal">
+            <div class="plan__name">Basic</div>
+            <div class="plan__price">CHF 99<span class="per">/Mt.</span></div>
+            <p class="plan__note">Der ideale Einstieg in die Welt der Luxusuhren.</p>
+            <ul class="plan__list">
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Limitierte Uhrenauswahl</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Basis-Versicherung</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> 1 Wechsel pro Monat</li>
+            </ul>
+            <a href="kontakt.php?betreff=Abonnement%20Basic&amp;typ=mieten" class="btn btn--outline btn--block">Auswählen</a>
+          </div>
+
+          <!-- Premium (featured) -->
+          <div class="plan plan--featured reveal" data-delay="1">
+            <div class="plan__badge">Am beliebtesten</div>
+            <div class="plan__name">Premium</div>
+            <div class="plan__price">CHF 249<span class="per">/Mt.</span></div>
+            <p class="plan__note">Mehr Auswahl, mehr Freiheit, mehr Service.</p>
+            <ul class="plan__list">
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Erweiterte Uhrenauswahl</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Vollkasko-Versicherung</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> 2 Wechsel pro Monat</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Persönliche Beratung</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Kaufoption mit Rabatt</li>
+            </ul>
+            <a href="kontakt.php?betreff=Abonnement%20Premium&amp;typ=mieten" class="btn btn--gold btn--block">Auswählen</a>
+          </div>
+
+          <!-- Excellence -->
+          <div class="plan reveal" data-delay="2">
+            <div class="plan__badge" style="background:var(--charcoal)">Für Kenner</div>
+            <div class="plan__name">Excellence</div>
+            <div class="plan__price">CHF 799<span class="per">/Mt.</span></div>
+            <p class="plan__note">Das Maximum an Auswahl, Service und Exklusivität.</p>
+            <ul class="plan__list">
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Vollständige Uhrenauswahl</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Vollkasko+ Versicherung</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Unbegrenzte Wechsel</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Exklusive Events &amp; Concierge</li>
+              <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Kaufoption mit Rabatt</li>
+            </ul>
+            <a href="kontakt.php?betreff=Abonnement%20Excellence&amp;typ=mieten" class="btn btn--outline btn--block">Auswählen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPARISON ================= -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Im Detail</span>
+          <h2 class="display-2">Leistungen im Vergleich</h2>
+        </div>
+
+        <div class="compare-wrap reveal">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th scope="col">Leistung</th>
+                <th scope="col">Basic</th>
+                <th scope="col" class="is-featured">Premium</th>
+                <th scope="col">Excellence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Uhrenauswahl</td>
+                <td>Limitiert</td>
+                <td class="is-featured">Erweitert</td>
+                <td>Vollständig</td>
+              </tr>
+              <tr>
+                <td>Versicherung</td>
+                <td>Basis</td>
+                <td class="is-featured">Vollkasko</td>
+                <td>Vollkasko+</td>
+              </tr>
+              <tr>
+                <td>Wechsel pro Monat</td>
+                <td>1</td>
+                <td class="is-featured">2</td>
+                <td>Unbegrenzt</td>
+              </tr>
+              <tr>
+                <td>Persönliche Beratung</td>
+                <td><span class="no" aria-label="nein">—</span></td>
+                <td class="is-featured"><span class="yes" aria-label="ja">✓</span></td>
+                <td><span class="yes" aria-label="ja">✓</span></td>
+              </tr>
+              <tr>
+                <td>Exklusive Events</td>
+                <td><span class="no" aria-label="nein">—</span></td>
+                <td class="is-featured"><span class="no" aria-label="nein">—</span></td>
+                <td><span class="yes" aria-label="ja">✓</span></td>
+              </tr>
+              <tr>
+                <td>Kaufoption mit Rabatt</td>
+                <td><span class="no" aria-label="nein">—</span></td>
+                <td class="is-featured"><span class="yes" aria-label="ja">✓</span></td>
+                <td><span class="yes" aria-label="ja">✓</span></td>
+              </tr>
+              <tr>
+                <td>Concierge-Service</td>
+                <td><span class="no" aria-label="nein">—</span></td>
+                <td class="is-featured"><span class="no" aria-label="nein">—</span></td>
+                <td><span class="yes" aria-label="ja">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RENTAL CATALOGUE ================= -->
+    <section class="section" id="mietkollektion">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Verfügbare Uhren</span>
+          <h2 class="display-2">Jetzt zur Miete</h2>
+          <p class="lead" style="margin-top:1.2rem">Eine Auswahl unserer beliebtesten Modelle — bereit, getragen zu werden.</p>
+        </div>
+
+<div class="product-grid">
+
+<?php while($uhr = $result->fetch_assoc()): ?>
+
+<article class="card reveal">
+
+    <img
+        src="<?php echo htmlspecialchars($uhr['Picture']); ?>"
+        alt="<?php echo htmlspecialchars($uhr['Uhren_Name']); ?>"
+        style="width:100%;height:320px;object-fit:cover;"
+    >
+
+    <div class="card__body">
+
+        <span class="card__brand">
+            <?php echo htmlspecialchars($uhr['Marke']); ?>
+        </span>
+
+        <h3 class="card__model">
+            <?php echo htmlspecialchars($uhr['Uhren_Name']); ?>
+        </h3>
+
+        <div class="card__foot">
+
+            <span class="card__price">
+                CHF <?php echo number_format($uhr['Preis'], 2); ?>
+            </span>
+
+            <a
+                class="card__cta"
+                href="kontakt.php?betreff=<?php echo urlencode($uhr['Uhren_Name']); ?>&typ=mieten"
+            >
+                Mieten →
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<?php endwhile; ?>
+
+</div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="section" style="background:var(--ivory)">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Stimmen unserer Kunden</span>
+          <h2 class="display-2">Was Kenner sagen</h2>
+        </div>
+
+        <div class="testimonials">
+          <figure class="testimonial reveal">
+            <div class="stars" aria-label="5 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+            </div>
+            <blockquote class="testimonial__quote">„Die Freiheit, verschiedene Uhren zu tragen, ohne mich festzulegen — genau das habe ich gesucht."</blockquote>
+            <figcaption class="testimonial__person">
+              <div class="avatar">MW</div>
+              <div><div class="testimonial__name">Marcus Weber</div><div class="testimonial__role">Unternehmer, Zürich</div></div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal" data-delay="1">
+            <div class="stars" aria-label="5 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+            </div>
+            <blockquote class="testimonial__quote">„Tadelloser Service und ein Kundensupport, der schneller reagiert, als ich es je erlebt habe."</blockquote>
+            <figcaption class="testimonial__person">
+              <div class="avatar">ER</div>
+              <div><div class="testimonial__name">Elena Rossi</div><div class="testimonial__role">Ärztin, Lugano</div></div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal" data-delay="2">
+            <div class="stars" aria-label="5 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.8 6.6 19.5l1.2-6L3.4 9.3l6-.7z"/></svg>
+            </div>
+            <blockquote class="testimonial__quote">„Ehrliche Preise, keine versteckten Gebühren. Genau so sollte Luxus funktionieren."</blockquote>
+            <figcaption class="testimonial__person">
+              <div class="avatar">JM</div>
+              <div><div class="testimonial__name">James Mitchell</div><div class="testimonial__role">Geschäftsführer, Basel</div></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand-col">
+          <div class="footer__brand">Tempora<span class="brand__dot">·</span>Lux</div>
+          <p class="footer__tag">Schweizer Luxusuhren — kaufen und mieten. Zeitlose Meisterwerke für Kenner.</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4" stroke-linecap="round"/></svg></a>
+            <a href="https://www.pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7c-2 0-3.2 1.4-3.2 3 0 1 .5 1.6 1 1.6.3 0 .4-.6.4-.9 0-.6-.6-1 0-1.9.4-.6 2.4-.9 3.1.4.5 1 .1 2.6-.7 3.3-.7.6-1.7.3-1.9-.4M11 13.5L9.8 18" stroke-linecap="round"/></svg></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 9.5l3.5 2.5L11 14.5z" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Kollektion</h4>
+          <ul>
+            <li><a href="kaufen.php">Uhren kaufen</a></li>
+            <li><a href="mieten.php">Uhren mieten</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="index.php">Über uns</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Boutique</h4>
+          <address class="footer__address">
+            Bahnhofstrasse 1<br>
+            8001 Zürich<br>
+            Schweiz
+          </address>
+          <p class="footer__hours-label">Öffnungszeiten</p>
+          <dl class="footer__hours">
+            <div><dt>Mo–Fr</dt> 09:00–18:30</div>
+            <div><dt>Sa</dt> 10:00–17:00</div>
+            <div class="closed"><dt>So</dt> Geschlossen</div>
+          </dl>
+        </div>
+      </div>
+
+      <p class="footer__disclaimer">Das ist ein Schulprojekt und keine reale Website.</p>
+
+      <div class="footer__bottom">
+        <span>© 2025 Tempora Lux. Alle Rechte vorbehalten.</span>
+        <div class="footer__legal">
+          <a href="#">Datenschutz</a>
+          <a href="#">Impressum</a>
+        </div>
+        <span>Erstellt von: Kyle · Raphael · Kimo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
