@@ -90,49 +90,73 @@
         <!-- Form -->
         <div class="contact-card reveal" data-delay="1">
           <form id="contact-form" novalidate>
+        
+
+            <!-- Name -->
             <div class="field field--row">
               <div>
-                <label for="c-nachname">Nachname</label>
-                <input type="text" id="c-nachname" name="nachname" autocomplete="family-name" placeholder="Muster" />
+                <label for="c-nachname">Nachname *</label>
+                <input type="text" id="c-nachname" name="nachname" autocomplete="family-name" placeholder="Muster" required/>
                 <span class="field__error"></span>
               </div>
+            
               <div>
-                <label for="c-vorname">Name</label>
-                <input type="text" id="c-vorname" name="vorname" autocomplete="given-name" placeholder="Max" />
+                <label for="c-vorname">Vorname *</label>
+                <input type="text" id="c-vorname" name="vorname" autocomplete="given-name" placeholder="Max" required/>
                 <span class="field__error"></span>
               </div>
             </div>
-
+            
+            <!-- Contact -->
             <div class="field field--row">
               <div>
-                <label for="c-phone">Telefonnummer</label>
-                <input type="tel" id="c-phone" name="telefon" />
+                <label for="c-phone">Telefonnummer *</label>
+                <input type="tel" id="c-phone" name="telefon" placeholder="+41 79 123 45 67" required/>
                 <span class="field__error"></span>
               </div>
+            
               <div>
-                <label for="c-email">E-Mail</label>
-                <input type="email" id="c-email" name="email" required />
+                <label for="c-email">E-Mail *</label>
+                <input type="email" id="c-email" name="email" autocomplete="email" placeholder="max.muster@email.ch" required/>
+               <span class="field__error"></span>
+              </div>
+            </div>
+            
+            <!-- Address -->
+            <div class="field field--row">
+              <div>
+                <label for="c-plz">PLZ *</label>
+                <input type="number" id="c-plz" name="plz" placeholder="8001" required/>
+                <span class="field__error"></span>
+              </div>
+            
+              <div>
+                <label for="c-ort">Ort *</label>
+                <input type="text" id="c-ort" name="ort" placeholder="Zürich" required/>
                 <span class="field__error"></span>
               </div>
             </div>
-
+            
             <div class="field field--row">
               <div>
-                <label for="c-plz">PLZ, Ort</label>
-                <input type="text" id="c-plz" name="plz_ort" autocomplete="postal-code" placeholder="8001 Zürich" />
+                <label for="c-strasse">Strasse *</label>
+                <input type="text" id="c-strasse" name="strasse" placeholder="Bahnhofstrasse" required/>
                 <span class="field__error"></span>
               </div>
+            
               <div>
-                <label for="c-strasse">Strasse, Nr.</label>
-                <input type="text" id="c-strasse" name="strasse" autocomplete="street-address" placeholder="Bahnhofstrasse 1" />
+                <label for="c-nummer">Nr. *</label>
+                <input type="text" id="c-nummer" name="nummer" placeholder="1" required/>
                 <span class="field__error"></span>
               </div>
             </div>
-
+            
+            <!-- Subject -->
             <div class="field">
-              <label for="c-betreff">Betreff</label>
+              <label for="c-betreff">Betreff *</label>
               <div class="field--subject">
-                <input type="text" id="c-betreff" name="betreff" placeholder="z. B. Rolex Submariner" />
+                <input type="text" id="c-betreff" name="betreff" placeholder="z. B. Rolex Submariner" required/>
+            
                 <select id="c-anliegen" name="anliegen" aria-label="Anliegen">
                   <option value="kaufen">Kaufen</option>
                   <option value="mieten">Mieten</option>
@@ -141,20 +165,28 @@
               </div>
               <span class="field__error"></span>
             </div>
-
+            
+            <!-- Message -->
             <div class="field">
-              <label for="c-nachricht">Nachricht</label>
-              <textarea id="c-nachricht" name="nachricht" placeholder="Ihre Nachricht an uns …"></textarea>
+              <label for="c-nachricht">Nachricht *</label>
+              <textarea id="c-nachricht" name="nachricht" placeholder="Ihre Nachricht an uns …" required></textarea>
               <span class="field__error"></span>
             </div>
-
+            
+            <!-- AGB -->
             <label class="checkbox" for="c-agb">
               <input type="checkbox" id="c-agb" name="agb" />
-              <span>Ich akzeptiere die <a href="#">AGB</a> und die <a href="#">Datenschutzerklärung</a>.</span>
+              <span> Ich akzeptiere die <a href="#">AGB</a> und die <a href="#">Datenschutzerklärung</a>. </span>
             </label>
+            
             <span class="field__error" data-agb-error style="display:block;margin:-1rem 0 1.2rem"></span>
+            
+            <button type="submit" class="btn btn--gold btn--block">
+              Absenden <span class="arrow">→</span>
+            </button>        
+          </form>
+        </div>
 
-            <button type="submit" class="btn btn--gold btn--block">Absenden <span class="arrow">→</span></button>
 
             <!-- Erfolgsmeldung (Demo) -->
             <div class="auth-success" style="margin-top:1.6rem">
