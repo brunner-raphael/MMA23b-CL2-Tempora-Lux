@@ -42,7 +42,7 @@ $result = $conn->query("
         <a href="index.php" class="nav__link">Entdecken</a>
         <a href="kaufen.php" class="nav__link">Kaufen</a>
         <a href="mieten.php" class="nav__link is-active">Mieten</a>
-        <a href="kontakt.html" class="nav__link">Kontakt</a>
+        <a href="kontakt.php" class="nav__link">Kontakt</a>
       </nav>
       <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -55,7 +55,7 @@ $result = $conn->query("
       <a href="index.php" class="mobile-menu__link">Entdecken</a>
       <a href="kaufen.php" class="mobile-menu__link">Kaufen</a>
       <a href="mieten.php" class="mobile-menu__link is-active">Mieten</a>
-      <a href="kontakt.html" class="mobile-menu__link">Kontakt</a>
+      <a href="kontakt.php" class="mobile-menu__link">Kontakt</a>
     </nav>
   </div>
 
@@ -144,7 +144,7 @@ $result = $conn->query("
               <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Basis-Versicherung</li>
               <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> 1 Wechsel pro Monat</li>
             </ul>
-            <a href="kontakt.html?betreff=Abonnement%20Basic&amp;typ=mieten" class="btn btn--outline btn--block">Auswählen</a>
+            <a href="kontakt.php?betreff=Abonnement%20Basic&amp;typ=mieten" class="btn btn--outline btn--block">Auswählen</a>
           </div>
 
           <!-- Premium (featured) -->
@@ -160,7 +160,7 @@ $result = $conn->query("
               <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Persönliche Beratung</li>
               <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Kaufoption mit Rabatt</li>
             </ul>
-            <a href="kontakt.html?betreff=Abonnement%20Premium&amp;typ=mieten" class="btn btn--gold btn--block">Auswählen</a>
+            <a href="kontakt.php?betreff=Abonnement%20Premium&amp;typ=mieten" class="btn btn--gold btn--block">Auswählen</a>
           </div>
 
           <!-- Excellence -->
@@ -176,7 +176,7 @@ $result = $conn->query("
               <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Exklusive Events &amp; Concierge</li>
               <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg> Kaufoption mit Rabatt</li>
             </ul>
-            <a href="kontakt.html?betreff=Abonnement%20Excellence&amp;typ=mieten" class="btn btn--outline btn--block">Auswählen</a>
+            <a href="kontakt.php?betreff=Abonnement%20Excellence&amp;typ=mieten" class="btn btn--outline btn--block">Auswählen</a>
           </div>
         </div>
       </div>
@@ -288,7 +288,7 @@ $result = $conn->query("
 
             <a
                 class="card__cta"
-                href="kontakt.html?betreff=<?php echo urlencode($uhr['Uhren_Name']); ?>&typ=mieten"
+                href="kontakt.php?betreff=<?php echo urlencode($uhr['Uhren_Name']); ?>&typ=mieten"
             >
                 Mieten →
             </a>
@@ -403,7 +403,7 @@ $result = $conn->query("
           <h4>Unternehmen</h4>
           <ul>
             <li><a href="index.php">Über uns</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
         <div class="footer__col">
