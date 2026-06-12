@@ -1047,25 +1047,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; 
 .auth-success p { color: var(--text-soft); font-size: 0.95rem; }
 .auth-success strong { color: var(--charcoal); font-weight: 400; }
 
-/* ----------------------------------------------------------------------- */
-/* 19. Reveal-on-scroll animation                                          */
-/* ----------------------------------------------------------------------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(26px);
-  transition: opacity .8s var(--ease), transform .8s var(--ease);
-  will-change: opacity, transform;
-}
-.reveal.is-visible { opacity: 1; transform: none; }
-.reveal[data-delay="1"] { transition-delay: .08s; }
-.reveal[data-delay="2"] { transition-delay: .16s; }
-.reveal[data-delay="3"] { transition-delay: .24s; }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
-}
 
 /* ----------------------------------------------------------------------- */
 /* 20. Responsive                                                          */
