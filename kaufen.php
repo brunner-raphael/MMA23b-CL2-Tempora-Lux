@@ -196,22 +196,6 @@ $result = $conn->query("SELECT * FROM uhren");
       </div>
     </section>
 
-    <!-- ================= NEWSLETTER ================= -->
-    <section class="section newsletter">
-      <div class="container newsletter__inner reveal">
-        <span class="eyebrow eyebrow--light eyebrow--center">Abonnement</span>
-        <h2 class="display-2">Bleiben Sie auf dem Laufenden</h2>
-        <p>Erhalten Sie exklusive Neuigkeiten zu neuen Modellen, seltenen Stücken und privaten Verkaufsanlässen — direkt in Ihr Postfach.</p>
-        <form class="newsletter__form" data-newsletter novalidate>
-          <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" aria-label="E-Mail-Adresse" />
-          <button type="submit" class="btn btn--gold">Abonnieren</button>
-        </form>
-        <p class="form-msg" role="status" aria-live="polite"></p>
-        <p class="newsletter__note">Sie können sich jederzeit abmelden. Wir geben Ihre Daten niemals weiter.</p>
-      </div>
-    </section>
-  </main>
-
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container">
