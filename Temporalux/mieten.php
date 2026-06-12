@@ -14,6 +14,7 @@ $result = $conn->query("
     SELECT *
     FROM uhren
     ORDER BY Uhren_ID ASC
+    LIMIT 67
 ");
 ?>
 
