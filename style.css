@@ -1329,12 +1329,4 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; 
   40% { bottom: 150px; }
   60% { bottom: 130px; }
 
-.hero__image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: var(--shadow-lg);
-} 
-  100% { bottom: 0; }
-}
+
