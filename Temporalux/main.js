@@ -204,28 +204,6 @@
     alert("Formular erfolgreich validiert!");
    });
 
-      /* ------------------------------------------------------------------
-         DEMO — kein Backend. Hier würde die echte Bestellanfrage stehen:
-
-         fetch("/api/kontakt", {
-           method: "POST",
-           headers: { "Content-Type": "application/json" },
-           body: JSON.stringify({
-             nachname: form.elements["nachname"].value,
-             vorname:  form.elements["vorname"].value,
-             plz_ort:  form.elements["plz_ort"].value,
-             strasse:  form.elements["strasse"].value,
-             betreff:  form.elements["betreff"].value,
-             anliegen: form.elements["anliegen"].value,
-             nachricht: form.elements["nachricht"].value
-           })
-         }).then(function (res) { return res.json(); });
-
-         Serverseitig (parametrisiert!):
-         INSERT INTO anfragen
-           (nachname, vorname, plz_ort, strasse, betreff, anliegen, nachricht)
-         VALUES (?, ?, ?, ?, ?, ?, ?);
-      ------------------------------------------------------------------ */
       form.querySelectorAll("input, textarea, select, button").forEach(function (el) {
         if (el.type !== "submit") el.setAttribute("disabled", "disabled");
       });
@@ -233,33 +211,8 @@
       if (submitBtn) submitBtn.style.display = "none";
       if (success) success.classList.add("is-shown");
       success.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
-
-  
-
-  /* ----------------------------------------------------------------- */
-  /* Reveal-on-scroll                                                   */
-  /* ----------------------------------------------------------------- */
-  function initReveal() {
-    var els = document.querySelectorAll(".reveal");
-    if (!els.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      els.forEach(function (el) { el.classList.add("is-visible"); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-
-    els.forEach(function (el) { io.observe(el); });
-  }
-})(); 
+    };
+   };
 
 
 
