@@ -211,6 +211,5 @@
       var submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) submitBtn.style.display = "none";
       if (success) success.classList.add("is-shown");
-      success.scrollIntoView({ behavior: "smooth", block: "center" });
     };
 })();
