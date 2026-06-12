@@ -1235,3 +1235,98 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; 
 @media (max-width: 560px) {
   .field--subject { grid-template-columns: 1fr; }
 }
+/* ==========================================
+   Tempora Lux Challenge Game
+   ========================================== */
+
+.game-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.game-intro {
+  margin-bottom: 2rem;
+}
+
+#score {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--charcoal);
+  margin-top: 1rem;
+}
+
+#shop {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  background-image: url("assets/csm_Uhrenladen_richtig_designen_web_46ae75e29e.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+#watch {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url("assets/V1102518_1_det.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#obstacle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 550px;
+  background-image: url("assets/rock.png");
+  background-size: cover;
+}
+
+#startButton {
+  display: block;
+  margin: 0 auto 1rem;
+  padding: 0.95em 1.9em;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--charcoal);
+  color: white;
+  border: none;
+}
+
+#speedDisplay {
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 1rem;
+}
+
+#challenge {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-soft);
+}
+
+.jump-animation {
+  animation: jump 0.6s ease-out forwards;
+}
+
+@keyframes jump {
+  0% { bottom: 0; }
+  40% { bottom: 150px; }
+  60% { bottom: 130px; }
+  100% { bottom: 0; }
+}
