@@ -213,10 +213,3 @@
       success.scrollIntoView({ behavior: "smooth", block: "center" });
     };
    };
-
-
-
-
-
-
-  
