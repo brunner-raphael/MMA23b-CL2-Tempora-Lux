@@ -90,6 +90,7 @@ $result = $conn->query("
 
         <div class="hero__visual reveal" data-delay="2">
   <img
+    src="assets/hero.png"
     alt="Luxusuhr Tempora Lux"
     class="hero__image"
   >
