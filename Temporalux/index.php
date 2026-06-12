@@ -45,7 +45,7 @@ $result = $conn->query("
         <a href="index.php" class="nav__link is-active">Entdecken</a>
         <a href="kaufen.php" class="nav__link">Kaufen</a>
         <a href="mieten.php" class="nav__link">Mieten</a>
-        <a href="kontakt.html" class="nav__link">Kontakt</a>
+        <a href="kontakt.php" class="nav__link">Kontakt</a>
       </nav>
 
       <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
@@ -60,7 +60,7 @@ $result = $conn->query("
       <a href="index.php" class="mobile-menu__link is-active">Entdecken</a>
       <a href="kaufen.php" class="mobile-menu__link">Kaufen</a>
       <a href="mieten.php" class="mobile-menu__link">Mieten</a>
-      <a href="kontakt.html" class="mobile-menu__link">Kontakt</a>
+      <a href="kontakt.php" class="mobile-menu__link">Kontakt</a>
     </nav>
   </div>
 
@@ -224,7 +224,7 @@ $result = $conn->query("
 
             <a
               class="card__cta"
-              href="kontakt.html?betreff=<?php echo urlencode($uhr['Uhren_Name']); ?>&typ=kaufen"
+              href="kontakt.php?betreff=<?php echo urlencode($uhr['Uhren_Name']); ?>&typ=kaufen"
             >
               Bestellen →
             </a>
@@ -248,7 +248,7 @@ $result = $conn->query("
         <h2 class="display-2">Finden Sie Ihren Zeitmesser</h2>
         <p>Ob Kauf oder Miete — unsere Experten begleiten Sie persönlich. Nehmen Sie Kontakt auf und entdecken Sie die volle Kollektion.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:0.5rem">
-          <a href="kontakt.html" class="btn btn--gold">Kontakt aufnehmen <span class="arrow">→</span></a>
+          <a href="kontakt.php" class="btn btn--gold">Kontakt aufnehmen <span class="arrow">→</span></a>
           <a href="kaufen.php" class="btn btn--ghost-light">Kollektion entdecken</a>
         </div>
       </div>
@@ -313,7 +313,7 @@ $result = $conn->query("
           <h4>Unternehmen</h4>
           <ul>
             <li><a href="index.php">Über uns</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
 
