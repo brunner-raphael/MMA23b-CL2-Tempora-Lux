@@ -154,7 +154,7 @@
        } else {
          setError(field, "");
        }
-    };
+    });
   
     // E-Mail prüfen
     var email = form.elements["email"];
