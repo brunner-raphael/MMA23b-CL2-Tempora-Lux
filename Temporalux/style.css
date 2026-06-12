@@ -1328,6 +1328,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; 
   0% { bottom: 0; }
   40% { bottom: 150px; }
   60% { bottom: 130px; }
+  100% { bottom: 0; }
+}
 
 .hero__image {
   width: 100%;
@@ -1335,6 +1337,4 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; 
   display: block;
   border-radius: 12px;
   box-shadow: var(--shadow-lg);
-} 
-  100% { bottom: 0; }
 }
