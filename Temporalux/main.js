@@ -16,7 +16,6 @@
     initMobileMenu();
     initNewsletter();
     initContactForm();
-    initReveal();
   });
 
   /* ----------------------------------------------------------------- */
