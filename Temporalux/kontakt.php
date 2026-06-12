@@ -22,7 +22,7 @@
         <a href="index.php" class="nav__link">Entdecken</a>
         <a href="kaufen.html" class="nav__link">Kaufen</a>
         <a href="mieten.php" class="nav__link">Mieten</a>
-        <a href="kontakt.html" class="nav__link is-active">Kontakt</a>
+        <a href="kontakt.php" class="nav__link is-active">Kontakt</a>
       </nav>
       <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -35,7 +35,7 @@
       <a href="index.php" class="mobile-menu__link">Entdecken</a>
       <a href="kaufen.html" class="mobile-menu__link">Kaufen</a>
       <a href="mieten.php" class="mobile-menu__link">Mieten</a>
-      <a href="kontakt.html" class="mobile-menu__link is-active">Kontakt</a>
+      <a href="kontakt.php" class="mobile-menu__link is-active">Kontakt</a>
     </nav>
   </div>
 
@@ -226,7 +226,7 @@
           <h4>Unternehmen</h4>
           <ul>
             <li><a href="index.php">Über uns</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
         <div class="footer__col">
