@@ -34,7 +34,7 @@ $result = $conn->query("
 </head>
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
+  <!-- Nav -->
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.php" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
@@ -60,7 +60,7 @@ $result = $conn->query("
   </div>
 
   <main>
-    <!-- ================= HERO ================= -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
@@ -90,7 +90,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= CONCEPT ================= -->
+    <!-- Konzept -->
     <section class="section">
       <div class="container">
         <div class="concept">
@@ -129,7 +129,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= PRICING ================= -->
+    <!-- Abos -->
     <section class="section" id="tarife">
       <div class="container">
         <div class="section-head section-head--center reveal">
@@ -152,7 +152,7 @@ $result = $conn->query("
             <a href="kontakt.php?betreff=Abonnement%20Basic&amp;typ=mieten" class="btn btn--outline btn--block">Auswählen</a>
           </div>
 
-          <!-- Premium (featured) -->
+          <!-- Premium -->
           <div class="plan plan--featured reveal" data-delay="1">
             <div class="plan__badge">Am beliebtesten</div>
             <div class="plan__name">Premium</div>
@@ -187,7 +187,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= COMPARISON ================= -->
+    <!-- Vergleichstabelle -->
     <section class="section section--tight">
       <div class="container">
         <div class="section-head section-head--center reveal">
@@ -254,7 +254,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= RENTAL CATALOGUE ================= -->
+    <!-- Mietkatalog -->
     <section class="section" id="mietkollektion">
       <div class="container">
         <div class="section-head reveal">
@@ -310,7 +310,7 @@ $result = $conn->query("
       </div>
     </section>
 
-    <!-- ================= TESTIMONIALS ================= -->
+    <!-- Zitate & Bewertungen -->
     <section class="section" style="background:var(--ivory)">
       <div class="container">
         <div class="section-head section-head--center reveal">
@@ -368,7 +368,7 @@ $result = $conn->query("
     </section>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
