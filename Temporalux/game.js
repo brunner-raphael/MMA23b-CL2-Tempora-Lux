@@ -46,9 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.max(0, Math.sin(Math.PI * t) * 150);
   }
 
-  document.addEventListener("keydown", (event) => {
-    if (event.code === "Space") jump();
-  });
+document.addEventListener("keydown", (event) => {
+  if (event.code === "Space") {
+    event.preventDefault(); // 👈 WICHTIG
+    jump();
+  }
+});
 
   function startGame() {
     score.innerText = "0";
