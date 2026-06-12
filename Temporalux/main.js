@@ -201,7 +201,8 @@
    
     // Hier später PHP / Datenbank-Anbindung
    
-    alert("Formular erfolgreich validiert!");
+   alert("Formular erfolgreich validiert!");
+   form.reset();
    });
 
       form.querySelectorAll("input, textarea, select, button").forEach(function (el) {
@@ -212,3 +213,4 @@
       if (success) success.classList.add("is-shown");
       success.scrollIntoView({ behavior: "smooth", block: "center" });
     };
+})();
