@@ -305,10 +305,13 @@
 
       document.addEventListener("keydown", (event) => {
         if (event.code === "Space") {
-          jump();
-        }
-      });
+             event.preventDefault();
 
+             if (startButton.disabled) {
+               jump();
+             }
+           }
+         });
       function startGame() {
         score.innerText = 0;
         currentSpeed = 7;
