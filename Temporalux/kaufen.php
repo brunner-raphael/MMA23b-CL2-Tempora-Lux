@@ -31,11 +31,11 @@ $result = $conn->query("SELECT * FROM uhren");
   <!-- ================= NAVIGATION ================= -->
   <header class="nav">
     <div class="container nav__inner">
-      <a href="index.html" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
+      <a href="index.php" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
       <nav class="nav__links" aria-label="Hauptnavigation">
-        <a href="index.html" class="nav__link">Entdecken</a>
+        <a href="index.php" class="nav__link">Entdecken</a>
         <a href="kaufen.php" class="nav__link is-active">Kaufen</a>
-        <a href="mieten.html" class="nav__link">Mieten</a>
+        <a href="mieten.php" class="nav__link">Mieten</a>
         <a href="kontakt.html" class="nav__link">Kontakt</a>
       </nav>
       <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
@@ -46,9 +46,9 @@ $result = $conn->query("SELECT * FROM uhren");
 
   <div class="mobile-menu" id="mobile-menu">
     <nav class="mobile-menu__links" aria-label="Mobile Navigation">
-      <a href="index.html" class="mobile-menu__link">Entdecken</a>
+      <a href="index.php" class="mobile-menu__link">Entdecken</a>
       <a href="kaufen.php" class="mobile-menu__link is-active">Kaufen</a>
-      <a href="mieten.html" class="mobile-menu__link">Mieten</a>
+      <a href="mieten.php" class="mobile-menu__link">Mieten</a>
       <a href="kontakt.html" class="mobile-menu__link">Kontakt</a>
     </nav>
   </div>
@@ -67,7 +67,7 @@ $result = $conn->query("SELECT * FROM uhren");
           </p>
           <div class="hero__cta reveal" data-delay="3">
             <a href="#kollektion" class="btn btn--solid">Kollektion entdecken <span class="arrow">→</span></a>
-            <a href="mieten.html" class="btn btn--outline">Lieber mieten? <span class="arrow">→</span></a>
+            <a href="mieten.php" class="btn btn--outline">Lieber mieten? <span class="arrow">→</span></a>
           </div>
         </div>
         <div class="hero__visual reveal" data-delay="2">
@@ -230,13 +230,13 @@ $result = $conn->query("SELECT * FROM uhren");
           <h4>Kollektion</h4>
           <ul>
             <li><a href="kaufen.php">Uhren kaufen</a></li>
-            <li><a href="mieten.html">Uhren mieten</a></li>
+            <li><a href="mieten.php">Uhren mieten</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4>Unternehmen</h4>
           <ul>
-            <li><a href="index.html">Über uns</a></li>
+            <li><a href="index.php">Über uns</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
           </ul>
         </div>
