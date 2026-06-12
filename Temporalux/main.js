@@ -248,7 +248,7 @@
    
     // Hier später PHP / Datenbank-Anbindung
    
-   alert("Formular erfolgreich validiert!");
+   alert("Vielen Dank, Ihre Nachricht wurde erfolgreich erfasst!");
    form.reset();
    });
     };
