@@ -1,3 +1,13 @@
+/* =========================================================================
+   TEMPORA LUX — main.js
+   Shared vanilla JavaScript for all pages.
+   - Sticky nav scroll state
+   - Mobile hamburger / full-screen overlay
+   - Newsletter validation
+   - Contact / order form (prefill + validation)
+   - Reveal-on-scroll (IntersectionObserver)
+   Schulprojekt · Kein Backend
+   ========================================================================= */
 (function () {
   "use strict";
 
@@ -8,8 +18,9 @@
     initContactForm();
   });
 
-  /* Sticky Nav */
-   
+  /* ----------------------------------------------------------------- */
+  /* Sticky navigation: add shadow/border once the page is scrolled     */
+  /* ----------------------------------------------------------------- */
   function initNavScroll() {
     var nav = document.querySelector(".nav");
     if (!nav) return;
@@ -20,8 +31,9 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* Mobile menu */
-   
+  /* ----------------------------------------------------------------- */
+  /* Mobile menu: animated burger + full-screen overlay                 */
+  /* ----------------------------------------------------------------- */
   function initMobileMenu() {
     var burger = document.querySelector(".nav__burger");
     var menu = document.querySelector(".mobile-menu");
@@ -33,11 +45,13 @@
         : !document.body.classList.contains("menu-open");
       document.body.classList.toggle("menu-open", open);
       burger.setAttribute("aria-expanded", String(open));
+      // Prevent background scroll while the overlay is open
       document.body.style.overflow = open ? "hidden" : "";
     };
 
     burger.addEventListener("click", function () { toggle(); });
 
+    // Close when a link inside the overlay is clicked
     menu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () { toggle(false); });
     });
@@ -47,15 +61,54 @@
     });
   }
 
-  /* Kontaktformular */
-  
+  /* ----------------------------------------------------------------- */
+  /* Newsletter — client-side email validation, visual feedback         */
+  /* ----------------------------------------------------------------- */
+  function initNewsletter() {
+    document.querySelectorAll("[data-newsletter]").forEach(function (form) {
+      var input = form.querySelector('input[type="email"]');
+      var msg = form.parentElement.querySelector(".form-msg")
+             || form.querySelector(".form-msg");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var value = (input.value || "").trim();
+        var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+
+        if (!msg) return;
+        if (!value) {
+          setMsg("Bitte geben Sie Ihre E-Mail-Adresse ein.", false);
+        } else if (!valid) {
+          setMsg("Bitte geben Sie eine gültige E-Mail-Adresse ein.", false);
+        } else {
+          setMsg("Vielen Dank — Sie sind angemeldet. Demo ✓ (kein Backend)", true);
+          form.reset();
+          /* Echter Request würde hier stehen:
+             fetch("/api/newsletter", { method: "POST", ... }); */
+        }
+      });
+
+      function setMsg(text, success) {
+        msg.textContent = text;
+        msg.classList.toggle("is-success", success);
+        msg.classList.toggle("is-error", !success);
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------------- */
+  /* Contact / order form (kontakt.php)                                */
+  /* - Pre-fills "Betreff" + "Anliegen" from the order-button URL       */
+  /*   e.g. kontakt.php?betreff=Rolex%20Submariner&typ=kaufen          */
+  /* - Client-side validation with German messages (demo, no backend)   */
+  /* ----------------------------------------------------------------- */
   function initContactForm() {
     var form = document.getElementById("contact-form");
     if (!form) return;
 
     var success = form.querySelector(".auth-success");
 
-
+    /* --- prefill from query string ---------------------------------- */
     var params = new URLSearchParams(window.location.search);
     var betreff = params.get("betreff");
     var typ = params.get("typ");
@@ -64,7 +117,7 @@
       form.elements["anliegen"].value = typ;
     }
 
-    
+    /* --- validation helpers ----------------------------------------- */
     function setError(field, message) {
       var wrap = field.closest(".field") || field.parentElement;
       var err = wrap ? wrap.querySelector(".field__error") : null;
@@ -74,7 +127,7 @@
     }
 
 form.addEventListener("submit", function (e) {
-
+     e.preventDefault();
    
     var ok = true;
    
@@ -192,9 +245,7 @@ form.addEventListener("submit", function (e) {
     }
    
     if (!ok) return;
-   
-   alert("Vielen Dank, Ihre Nachricht wurde erfolgreich erfasst!");
-   form.reset();
+   form.submit();
    });
     };
 })();
