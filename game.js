@@ -1,6 +1,4 @@
-/* ==========================================
-   Tempora Lux Challenge Game
-   ========================================== */
+/*Tempora Lux Challenge Game*/
 
 document.addEventListener("DOMContentLoaded", () => {
   const watch = document.getElementById("watch");
@@ -9,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.getElementById("startButton");
   const speedDisplay = document.getElementById("speedDisplay");
 
-  // Wenn Game nicht auf dieser Seite existiert → raus
   if (!watch || !obstacle || !score || !startButton || !speedDisplay) return;
 
   let gameLoop;
@@ -48,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
-    event.preventDefault(); // 👈 WICHTIG
+    event.preventDefault();
     jump();
   }
 });
