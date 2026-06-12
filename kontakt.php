@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.php" class="brand">Tempora<span class="brand__dot">·</span>Lux</a>
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   </div>
 
   <main>
-    <!-- ================= PAGE HEAD ================= -->
+    <!-- Hero -->
     <section class="container page-head">
       <span class="eyebrow reveal">Kontakt &amp; Bestellung</span>
       <h1 class="display-1 reveal" data-delay="1">Sprechen Sie mit uns</h1>
@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       </p>
     </section>
 
-    <!-- ================= CONTACT ================= -->
+    <!-- Kontakt -->
     <section class="section container" style="padding-top:clamp(1.5rem,3vw,2.5rem)">
       <div class="contact-layout">
 
@@ -163,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               </div>
             </div>
             
-            <!-- Contact -->
+            <!-- Kontakt -->
             <div class="field field--row">
               <div>
                 <label for="c-phone">Telefonnummer *</label>
@@ -178,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               </div>
             </div>
             
-            <!-- Address -->
+            <!-- Addresse -->
             <div class="field field--row">
               <div>
                 <label for="c-plz">PLZ *</label>
@@ -207,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               </div>
             </div>
             
-            <!-- Subject -->
+            <!-- Subjekt -->
             <div class="field">
               <label for="c-betreff">Betreff *</label>
               <div class="field--subject">
@@ -241,23 +241,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               Absenden <span class="arrow">→</span>
             </button>        
           </form>
-        </div>
-
-
-            <!-- Erfolgsmeldung (Demo) -->
-            <div class="auth-success" style="margin-top:1.6rem">
-              <div class="auth-success__check">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <p><strong>Vielen Dank für Ihre Anfrage.</strong><br>Demo ✓ (kein Backend)</p>
-            </div>
+          </div>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
