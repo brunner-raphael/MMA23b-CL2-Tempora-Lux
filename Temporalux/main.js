@@ -169,6 +169,54 @@
          ok = false;
        }
     }
+
+    // Telefonnummer prüfen (+41 xx xxx xx xx)
+      var telefon = form.elements["telefon"];
+      
+      if (telefon.value.trim()) {
+      var validTelefon = /^+41\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/;
+      
+      if (!validTelefon.test(telefon.value.trim())) {
+      setError(
+      telefon,
+      "Bitte verwenden Sie das Format +41 79 123 45 67."
+      );
+      ok = false;
+      } else {
+      setError(telefon, "");
+      }
+      }
+      
+      // PLZ prüfen (genau 4 Ziffern)
+      var plz = form.elements["plz"];
+      
+      if (plz.value.trim()) {
+      if (!/^\d{4}$/.test(plz.value.trim())) {
+      setError(
+      plz,
+      "Die PLZ muss aus genau 4 Ziffern bestehen."
+      );
+      ok = false;
+      } else {
+      setError(plz, "");
+      }
+      }
+      
+      // Hausnummer prüfen (nur Zahlen)
+      var nummer = form.elements["nummer"];
+      
+      if (nummer.value.trim()) {
+      if (!/^\d+$/.test(nummer.value.trim())) {
+      setError(
+      nummer,
+      "Die Hausnummer darf nur Zahlen enthalten."
+      );
+      ok = false;
+      } else {
+      setError(nummer, "");
+      }
+      }
+
    
     // AGB prüfen
     var agb = form.elements["agb"];
