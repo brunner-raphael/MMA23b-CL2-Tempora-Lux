@@ -1,13 +1,3 @@
-/* =========================================================================
-   TEMPORA LUX — main.js
-   Shared vanilla JavaScript for all pages.
-   - Sticky nav scroll state
-   - Mobile hamburger / full-screen overlay
-   - Newsletter validation
-   - Contact / order form (prefill + validation)
-   - Reveal-on-scroll (IntersectionObserver)
-   Schulprojekt · Kein Backend
-   ========================================================================= */
 (function () {
   "use strict";
 
@@ -18,9 +8,8 @@
     initContactForm();
   });
 
-  /* ----------------------------------------------------------------- */
-  /* Sticky navigation: add shadow/border once the page is scrolled     */
-  /* ----------------------------------------------------------------- */
+  /* Sticky Nav */
+   
   function initNavScroll() {
     var nav = document.querySelector(".nav");
     if (!nav) return;
@@ -31,9 +20,8 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* ----------------------------------------------------------------- */
-  /* Mobile menu: animated burger + full-screen overlay                 */
-  /* ----------------------------------------------------------------- */
+  /* Mobile menu */
+   
   function initMobileMenu() {
     var burger = document.querySelector(".nav__burger");
     var menu = document.querySelector(".mobile-menu");
@@ -45,54 +33,17 @@
         : !document.body.classList.contains("menu-open");
       document.body.classList.toggle("menu-open", open);
       burger.setAttribute("aria-expanded", String(open));
-      // Prevent background scroll while the overlay is open
       document.body.style.overflow = open ? "hidden" : "";
     };
 
     burger.addEventListener("click", function () { toggle(); });
 
-    // Close when a link inside the overlay is clicked
     menu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () { toggle(false); });
     });
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") toggle(false);
-    });
-  }
-
-  /* ----------------------------------------------------------------- */
-  /* Newsletter — client-side email validation, visual feedback         */
-  /* ----------------------------------------------------------------- */
-  function initNewsletter() {
-    document.querySelectorAll("[data-newsletter]").forEach(function (form) {
-      var input = form.querySelector('input[type="email"]');
-      var msg = form.parentElement.querySelector(".form-msg")
-             || form.querySelector(".form-msg");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var value = (input.value || "").trim();
-        var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
-
-        if (!msg) return;
-        if (!value) {
-          setMsg("Bitte geben Sie Ihre E-Mail-Adresse ein.", false);
-        } else if (!valid) {
-          setMsg("Bitte geben Sie eine gültige E-Mail-Adresse ein.", false);
-        } else {
-          setMsg("Vielen Dank — Sie sind angemeldet. Demo ✓ (kein Backend)", true);
-          form.reset();
-          /* Echter Request würde hier stehen:
-             fetch("/api/newsletter", { method: "POST", ... }); */
-        }
-      });
-
-      function setMsg(text, success) {
-        msg.textContent = text;
-        msg.classList.toggle("is-success", success);
-        msg.classList.toggle("is-error", !success);
-      }
     });
   }
 
