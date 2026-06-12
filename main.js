@@ -47,19 +47,15 @@
     });
   }
 
-  /* ----------------------------------------------------------------- */
-  /* Contact / order form (kontakt.php)                                */
-  /* - Pre-fills "Betreff" + "Anliegen" from the order-button URL       */
-  /*   e.g. kontakt.php?betreff=Rolex%20Submariner&typ=kaufen          */
-  /* - Client-side validation with German messages (demo, no backend)   */
-  /* ----------------------------------------------------------------- */
+  /* Kontaktformular */
+  
   function initContactForm() {
     var form = document.getElementById("contact-form");
     if (!form) return;
 
     var success = form.querySelector(".auth-success");
 
-    /* --- prefill from query string ---------------------------------- */
+
     var params = new URLSearchParams(window.location.search);
     var betreff = params.get("betreff");
     var typ = params.get("typ");
@@ -68,7 +64,7 @@
       form.elements["anliegen"].value = typ;
     }
 
-    /* --- validation helpers ----------------------------------------- */
+    
     function setError(field, message) {
       var wrap = field.closest(".field") || field.parentElement;
       var err = wrap ? wrap.querySelector(".field__error") : null;
@@ -78,7 +74,7 @@
     }
 
 form.addEventListener("submit", function (e) {
-    // e.preventDefault();
+
    
     var ok = true;
    
@@ -196,8 +192,6 @@ form.addEventListener("submit", function (e) {
     }
    
     if (!ok) return;
-   
-    // Hier später PHP / Datenbank-Anbindung
    
    alert("Vielen Dank, Ihre Nachricht wurde erfolgreich erfasst!");
    form.reset();
