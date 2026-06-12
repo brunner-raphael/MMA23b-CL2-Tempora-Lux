@@ -128,37 +128,81 @@
     }
 
     form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var ok = true;
-
-      var required = [
-        ["nachname", "Bitte geben Sie Ihren Nachnamen ein."],
-        ["vorname", "Bitte geben Sie Ihren Namen ein."],
-        ["plz_ort", "Bitte geben Sie PLZ und Ort ein."],
-        ["strasse", "Bitte geben Sie Strasse und Nr. ein."],
-        ["betreff", "Bitte geben Sie einen Betreff ein."],
-        ["nachricht", "Bitte geben Sie eine Nachricht ein."]
-      ];
-      required.forEach(function (pair) {
-        var field = form.elements[pair[0]];
-        if (!field.value.trim()) ok = setError(field, pair[1]) && ok;
-        else setError(field, "");
-      });
-
-      // AGB checkbox
-      var agb = form.elements["agb"];
-      var agbErr = form.querySelector("[data-agb-error]");
-      var agbLabel = agb.closest(".checkbox");
-      if (!agb.checked) {
-        if (agbErr) agbErr.textContent = "Bitte akzeptieren Sie die AGB, um fortzufahren.";
-        if (agbLabel) agbLabel.classList.add("is-invalid");
-        ok = false;
-      } else {
-        if (agbErr) agbErr.textContent = "";
-        if (agbLabel) agbLabel.classList.remove("is-invalid");
-      }
-
-      if (!ok) return;
+    e.preventDefault();
+   
+    var ok = true;
+   
+    var required = [
+       ["nachname", "Bitte geben Sie Ihren Nachnamen ein."],
+       ["vorname", "Bitte geben Sie Ihren Vornamen ein."],
+       ["telefon", "Bitte geben Sie Ihre Telefonnummer ein."],
+       ["email", "Bitte geben Sie Ihre E-Mail-Adresse ein."],
+       ["plz", "Bitte geben Sie Ihre Postleitzahl ein."],
+       ["ort", "Bitte geben Sie Ihren Ort ein."],
+       ["strasse", "Bitte geben Sie Ihre Strasse ein."],
+       ["nummer", "Bitte geben Sie die Hausnummer ein."],
+       ["betreff", "Bitte geben Sie einen Betreff ein."],
+       ["nachricht", "Bitte geben Sie eine Nachricht ein."]
+    ];
+   
+    // Pflichtfelder prüfen
+    required.forEach(function (pair) {
+       var field = form.elements[pair[0]];
+   
+       if (!field.value.trim()) {
+         ok = setError(field, pair[1]) && ok;
+       } else {
+         setError(field, "");
+       }
+    });
+  
+    // E-Mail prüfen
+    var email = form.elements["email"];
+   
+    if (email.value.trim()) {
+       var validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   
+       if (!validEmail.test(email.value.trim())) {
+         setError(
+           email,
+           "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+         );
+         ok = false;
+       }
+    }
+   
+    // AGB prüfen
+    var agb = form.elements["agb"];
+    var agbErr = form.querySelector("[data-agb-error]");
+    var agbLabel = agb.closest(".checkbox");
+   
+    if (!agb.checked) {
+       if (agbErr) {
+         agbErr.textContent =
+           "Bitte akzeptieren Sie die AGB, um fortzufahren.";
+       }
+   
+       if (agbLabel) {
+         agbLabel.classList.add("is-invalid");
+       }
+   
+       ok = false;
+    } else {
+       if (agbErr) {
+         agbErr.textContent = "";
+       }
+   
+       if (agbLabel) {
+         agbLabel.classList.remove("is-invalid");
+       }
+    }
+   
+    if (!ok) return;
+   
+    // Hier später PHP / Datenbank-Anbindung
+   
+    alert("Formular erfolgreich validiert!");
+   });
 
       /* ------------------------------------------------------------------
          DEMO — kein Backend. Hier würde die echte Bestellanfrage stehen:
